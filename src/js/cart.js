@@ -22,6 +22,7 @@ function cartItemTemplate(item) {
   <p class="cart-card__price">$${item.FinalPrice}</p>
 </li>`;
 
+  localStorage.removeItem("so-cart");
   return newItem;
 }
 
