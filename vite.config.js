@@ -1,6 +1,7 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 
+
 export default defineConfig({
   root: "src/",
   build: {
@@ -14,6 +15,7 @@ export default defineConfig({
         product2: resolve(__dirname, "src/product_pages/marmot-ajax-3.html"),
         product3: resolve(__dirname, "src/product_pages/northface-alpine-3.html"),
         product4: resolve(__dirname, "src/product_pages/northface-talus-4.html"),
+        product4: resolve(__dirname, "src/product_pages/index.html"),
       },
     },
   },
