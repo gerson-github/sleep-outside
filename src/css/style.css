@@ -241,10 +241,18 @@ button {
   grid-column: 3;
 }
 
+/* 
+Explicação:
+max-width: 1080px; limita a largura máxima da <body> a 1080 pixels.
+margin: auto; aplica margem automática nos lados esquerdo e direito, o que centraliza horizontalmente o conteúdo quando a largura for menor que a da tela.
+*/
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
     margin: auto;
+
+
+      border: 5px solid blue;
   }
 
   .mission {
@@ -254,7 +262,39 @@ button {
   .cart-card {
     font-size: inherit;
     grid-template-columns: 150px auto 15%;
+
+  
+
   }
+}
+
+/* qdo a tela pega o menor tamanho */
+@media screen and (max-width: 600px) {
+  .product-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+ .mission {
+    top: 0.5rem;
+  
+} 
+
+.mission p {
+  width: 100%;
+  font-size: small;
+  
+}
+
+ .product-card img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} 
+
+
+
+
 }
 
 footer {
