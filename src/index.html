@@ -62,7 +62,28 @@
       </div>
 
       <section class="products">
-        <h2>Top Products</h2>
+        
+
+        <section class="detail-header" >
+          <h2>Top Products</h2>
+
+          <div>
+            <label for="sort">Sort by:</label>
+            <select id="sort">
+              <option value="default">Default</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+            </div>
+        </section>
+
+        <style>
+          .detail-header {
+            display: flex;
+            justify-content: space-between;
+          }
+        </style>
+
         <ul class="product-list">
           <li class="product-card">
             <a href="product_pages/?product=880RR">
@@ -117,3 +138,30 @@
     </footer>
   </body>
 </html>
+
+<script>
+  document.getElementById("sort").addEventListener("change", function () {
+    const sortBy = this.value;
+    const productList = document.querySelector(".product-list");
+    const products = Array.from(productList.children);
+
+    // Helper function to extract price
+    const getPrice = (product) =>
+      parseFloat(
+        product
+          .querySelector(".product-card__price")
+          .textContent.replace("$", ""),
+      );
+
+    // Sort logic
+    if (sortBy === "price-asc") {
+      products.sort((a, b) => getPrice(a) - getPrice(b));
+    } else if (sortBy === "price-desc") {
+      products.sort((a, b) => getPrice(b) - getPrice(a));
+    }
+
+    // Clear and re-append sorted products
+    productList.innerHTML = "";
+    products.forEach((product) => productList.appendChild(product));
+  });
+</script>
