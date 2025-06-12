@@ -112,7 +112,25 @@ button {
 
 .divider {
   border-bottom: 2px solid var(--primary-color);
+
+
+
 }
+
+.remove-btn {
+  background-color: var(--tertiary-color);
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  font-size: var(--small-font);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.remove-btn:hover {
+  background-color: #722f00; /* slightly darker on hover */
+}
+
 
 /* End utility classes */
 
@@ -161,11 +179,16 @@ button {
   flex-flow: row wrap;
   list-style-type: none;
   justify-content: center;
+
+
+
 }
 
 .product-list a {
   text-decoration: none;
   color: var(--dark-grey);
+ 
+
 }
 
 /* Styles for product lists */
@@ -175,6 +198,8 @@ button {
   padding: 0.5em;
   border: 1px solid var(--light-grey);
   max-width: 250px;
+
+
 }
 
 .product-card h2,
@@ -206,10 +231,15 @@ button {
 /* Start cart list card styles */
 .cart-card {
   display: grid;
-  grid-template-columns: 25% auto 15%;
+  grid-template-columns: 25% auto 15% 10%;
   font-size: var(--small-font);
   /* max-height: 120px; */
   align-items: center;
+
+  width: 100%;
+
+/* border: 5px solid red; */
+
 }
 
 .cart-card__image {
@@ -261,7 +291,7 @@ margin: auto; aplica margem automática nos lados esquerdo e direito, o que cent
 
   .cart-card {
     font-size: inherit;
-    grid-template-columns: 150px auto 15%;
+    grid-template-columns: 150px auto 15% 10%;
 
   
 

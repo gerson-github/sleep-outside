@@ -90,9 +90,23 @@
             <p class="cart-card__price">$199.99</p>
           </li> -->
         </ul>
+
+        <br /><br />
+
+        <div class="product-detail__add">
+          <button id="checkout" type="button">Checkout</button>
+        </div>
+
+        <br /><br />
       </section>
     </main>
 
     <footer>&copy;NOT a real business</footer>
   </body>
 </html>
+
+<script>
+  document.getElementById("checkout").addEventListener("click", function () {
+    window.location.href = "/checkout/index.html";
+  });
+</script>
