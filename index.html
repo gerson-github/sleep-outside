@@ -1,64 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Movie Night Planner</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #121212; color: white; margin: 0; padding: 1rem; }
-    h1 { color: #E50914; }
-    .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin-top: 2rem; }
-    .movie-card { background: #1f1f1f; padding: 1rem; border-radius: 10px; text-align: center; }
-    .movie-card img { width: 100%; border-radius: 5px; }
-    input { padding: 0.5rem; font-size: 1rem; width: 300px; max-width: 100%; }
-    button { padding: 0.5rem 1rem; font-size: 1rem; background-color: #E50914; border: none; color: white; cursor: pointer; margin-left: 0.5rem; }
-  </style>
-</head>
-<body>
-  <h1>🎬 Movie Night Planner</h1>
-  <input type="text" id="searchInput" placeholder="Search for a movie..." />
-  <button onclick="searchMovies()">Search</button>
-  <div id="movies" class="movie-grid"></div>
-
-  <script>
-    const TMDB_API_KEY = "fc0f79a739c191e38714dce7325a46bb"; // Replace this with your TMDb API key
-
-    async function searchMovies() {
-      const query = document.getElementById("searchInput").value;
-      if (!query) return;
-
-      const url = `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(query)}`;
-
-      try {
-        const res = await fetch(url);
-        const data = await res.json();
-        displayMovies(data.results);
-      } catch (err) {
-        console.error("Failed to fetch movies", err);
-      }
-    }
-
-    function displayMovies(movies) {
-      const container = document.getElementById("movies");
-      container.innerHTML = "";
-
-      movies.forEach((movie) => {
-        const card = document.createElement("div");
-        card.className = "movie-card";
-
-        const posterPath = movie.poster_path
-          ? `https://image.tmdb.org/t/p/w200${movie.poster_path}`
-          : "https://via.placeholder.com/200x300?text=No+Image";
-
-        card.innerHTML = `
-          <img src="${posterPath}" alt="${movie.title}" />
-          <h3>${movie.title}</h3>
-          <p>${movie.release_date ? movie.release_date.substring(0, 4) : "N/A"}</p>
-        `;
-
-        container.appendChild(card);
-      });
-    }
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Night Planner</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script type="module" src="scripts/main.js"></script>
+  </head>
+  <body>
+    <h1>🎬 Movie Night Planner</h1>
+    <input type="text" id="searchInput" placeholder="Search for a movie..." />
+    <button type="button" onclick="searchMovies()">Search</button>
+    <div id="movies" class="movie-grid"></div>
+  </body>
 </html>

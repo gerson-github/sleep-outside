@@ -1,0 +1,9 @@
+ 
+    body { font-family: Arial, sans-serif; background: #121212; color: white; margin: 0; padding: 1rem; }
+    h1 { color: #E50914; }
+    .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .movie-card { background: #1f1f1f; padding: 1rem; border-radius: 10px; text-align: center; }
+    .movie-card img { width: 100%; border-radius: 5px; }
+    input { padding: 0.5rem; font-size: 1rem; width: 300px; max-width: 100%; }
+    button { padding: 0.5rem 1rem; font-size: 1rem; background-color: #E50914; border: none; color: white; cursor: pointer; margin-left: 0.5rem; }
+ 
