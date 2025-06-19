@@ -22,14 +22,7 @@ body {
   
 }
 
-#movie-results {
-  background-image: url('/images/background.jpg') ;
-   background-size: cover;       /* scale image to cover the element */
-  background-position: center;  /* center the image */
-  background-repeat: no-repeat; /* prevent tiling */
-  min-height: 100vh;
-  width: 100%;
-}
+
 
 .movie-grid {
   padding-top: 60px;
