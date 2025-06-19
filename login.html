@@ -6,6 +6,112 @@
     <title>Movie Night Planner</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <script type="module" src="scripts/main.js"></script>
+
+<style>
+  /* Centraliza o conteúdo principal da página */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* altura da tela inteira */
+  padding: 1rem;
+}
+
+/* Estilo do formulário de login */
+.login-form-section {
+  background-color: #1f1f1f;
+  padding: 2rem;
+  border-radius: 12px;
+  color: white;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.login-form-section h2 {
+  color: #FFD700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.login-form-section label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.login-form-section input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.login-form-section button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #E50914;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.login-links {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.login-links a {
+  color: #FFD700;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.login-links a:hover {
+  color: #E50914;
+}
+
+dialog.modal {
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+  background-color: transparent;
+   width: 600px;         /* Set the desired width */
+   height: 60vh;
+  max-width: 90vw;      /* Responsive max width */
+}
+
+.modal-content {
+  background-color: #1f1f1f;
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid #FFD700;
+  max-width: 400px;
+  margin: auto;
+}
+
+.modal-content button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #E50914;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+</style>
+
   </head>
   <body>
     <div class="page-wrapper">
@@ -13,16 +119,38 @@
         <div class="logo">🎬 Movie Night Planner</div>
       </header>
 
-<h2>Login / Register</h2>
-  <form class="login-form">
-    <label for="email">Email:</label><br />
-    <input type="email" id="email" name="email" required /><br />
+      <h2>Login / Register</h2>
+      <main>
+        <section class="login-form-section">
+          <h2>🔐 Login to Your Account</h2>
+          <form id="loginForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
 
-    <label for="password">Password:</label><br />
-    <input type="password" id="password" name="password" required /><br />
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
 
-    <button type="submit">Login</button>
-  </form>
+            <button type="submit">Login</button>
+
+
+            <div class="login-links">
+              <a href="register.html">Create an Account</a>
+              <span> | </span>
+              <a href="forgot-password.html" id="forgotPasswordLink">Forgot Password?</a>
+            </div>
+
+          </form>
+        </section>
+      </main>
+
+   <!-- Modal (escondida por padrão) -->
+<dialog id="forgotModal" class="modal">
+  <div class="modal-content">
+    <p>📧 A reset link was sent to your email address.</p>
+    <button id="closeModal">OK</button>
+  </div>
+</dialog>
+
     <footer class="main-footer">
       <div class="footer-content">
         <div class="footer-info">
@@ -46,3 +174,21 @@
     </footer>
   </body>
 </html>
+
+<script>
+
+  const modal = document.getElementById("forgotModal");
+const openLink = document.getElementById("forgotPasswordLink");
+const closeBtn = document.getElementById("closeModal");
+
+openLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  modal.showModal(); // abre a modal
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.close(); // fecha a modal
+});
+
+
+</script>
