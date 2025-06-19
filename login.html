@@ -11,42 +11,18 @@
     <div class="page-wrapper">
       <header class="main-header">
         <div class="logo">🎬 Movie Night Planner</div>
-        <nav class="nav-links">
-          <a href="login.html">Login / Register</a>
-          <a href="bookings.html">My Bookings</a>
-        </nav>
       </header>
 
-      <div class="search-bar">
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Search for a movie..."
-        />
-        <button type="button" id="searchBtn">Search</button>
-      </div>
+<h2>Login / Register</h2>
+  <form class="login-form">
+    <label for="email">Email:</label><br />
+    <input type="email" id="email" name="email" required /><br />
 
-      <div class="genre-wrapper">
-        <div class="img-container">
-          <img class="banner-image" src="images/movietape4a.png" alt="" />
-        </div>
+    <label for="password">Password:</label><br />
+    <input type="password" id="password" name="password" required /><br />
 
-        <div
-          id="adventure-btn"
-          class="click-zone adventure-zone"
-          title=" "
-        ></div>
-        <div id="action-btn" class="click-zone action-zone" title=" "></div>
-        <div id="comedy-btn" class="click-zone comdy-zone" title=" "></div>
-        <div id="mistery-btn" class="click-zone mistery-zone" title=" "></div>
-        <div id="horror-btn" class="click-zone horror-zone" title=" "></div>
-      </div>
-
-      <section id="movie-results" aria-label="Movie serach results">
-        <h1 class="tranding-lbl" style="display: none">🔥 Trending Today</h1>
-        <div id="movies" class="movie-grid"></div>
-      </section>
-    </div>
+    <button type="submit">Login</button>
+  </form>
     <footer class="main-footer">
       <div class="footer-content">
         <div class="footer-info">
